@@ -71,6 +71,10 @@
         <value>bar</value>
     </util:list>
 
-
+    <util:map id="mojaMapa" map-class="java.util.HashMap">
+        <entry key="Key1" value="1"/>
+        <entry key="Key2" value="2"/>
+        <entry key="Key3" value="3"/>
+    </util:map>
     <context:annotation-config/>
 </beans>
