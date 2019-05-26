@@ -76,5 +76,23 @@
         <entry key="Key2" value="2"/>
         <entry key="Key3" value="3"/>
     </util:map>
+
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyyy-MM-dd" />
+    </bean>
+
+    <bean id = "myDate" factory-bean="dateFormat" factory-method="parse">
+        <constructor-arg value="2010-01-31" />
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>application.properties</value>
+        </property>
+    </bean>
+
+    <bean id="propMessage" class="pl.sda.Message" >
+        <property name="text" value="${mojParametr}"/>
+    </bean>
     <context:annotation-config/>
 </beans>

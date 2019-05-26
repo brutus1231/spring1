@@ -2,6 +2,7 @@ package pl.sda;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -20,5 +21,8 @@ public class Zad4 {
         for (String key : keys) {
             System.out.println(key + " " + myMap.get(key));
         }
+
+        Date myDate = (Date) context.getBean("myDate");
+        System.out.println(myDate);
     }
 }
