@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
     <bean id="message" class="pl.sda.Message" >
         <property name="text" value="wartosc startowa"/>
@@ -58,6 +61,16 @@
     <bean id = "person1" class="pl.sda.Person">
         <constructor-arg ref="address1" />
     </bean>
+
+    <bean id="napis" class="java.lang.String">
+        <constructor-arg value="908080"/>
+    </bean>
+
+    <util:list id="mojaLista" value-type="java.lang.String">
+        <value>foo</value>
+        <value>bar</value>
+    </util:list>
+
 
     <context:annotation-config/>
 </beans>
